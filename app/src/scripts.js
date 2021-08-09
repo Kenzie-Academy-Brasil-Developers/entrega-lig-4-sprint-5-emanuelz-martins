@@ -12,11 +12,11 @@ let diskCount = 0;
 let match = false;
 
 function createTable() {
-    for (let column = 0; column < mapArray.length; column++) {
+    for (let row = 0; row < mapArray.length; row++) {
         const tableRow = document.createElement('div');
         tableRow.classList.add('row');
         
-        for (let row = 0; row < mapArray[column].length; row++) {
+        for (let column = 0; column < mapArray[row].length; column++) {
             const tableColumn = document.createElement('div');
             tableColumn.classList.add('column');      
             
