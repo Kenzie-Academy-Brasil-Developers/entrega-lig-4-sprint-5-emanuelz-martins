@@ -27,10 +27,11 @@ for (let i = 0; i < columns.length; i++) {
         boardMoves(test);
         diagonalVictory(coords);
         crossWins(coords);
-        draw +=1
         if(draw === 42){
             alert("Draw!!!")
+            setTimeout(location.reload(), 2000)
         }
+        console.log(draw)
     });
 }
 
@@ -67,6 +68,7 @@ function boardMoves(index) {
             lastIndex = i;
             diskCount++;
             coords = [i, index];
+            draw +=1
             break;
         }
         else if (numberOfSpaces === 0 && match === true) {
@@ -76,6 +78,7 @@ function boardMoves(index) {
             lastIndex = i;
             diskCount++;
             coords = [i, index];
+            draw += 1
             break;
         }
     }
