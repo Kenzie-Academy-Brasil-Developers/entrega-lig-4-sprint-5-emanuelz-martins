@@ -15,6 +15,7 @@ let diskCount = 0;
 let counter = 1;
 let match = false;
 let coords = [];
+let draw = 0
 
 createTable();
 
@@ -26,6 +27,10 @@ for (let i = 0; i < columns.length; i++) {
         boardMoves(test);
         diagonalVictory(coords);
         crossWins(coords);
+        draw +=1
+        if(draw === 42){
+            alert("Draw!!!")
+        }
     });
 }
 
