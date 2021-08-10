@@ -1,16 +1,46 @@
 #main-container {
+    display: flex;
     max-width: 80vw;
-    width: 100%;
     border: 1px solid black;
 }
 
+.column {
+    width: 15%;
+}
+
 .row {
-    display: flex;
     height: 10vh;
     border: 2px solid black;
 }
 
-.column {
-    padding: 16.7px;
-    border: 2px solid black;
+.blackBall {
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    animation-name: theFall;
+    animation-duration: 0.4s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
+.redBall {
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    animation-name: theFall;
+    animation-duration: 0.4s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;    
+}
+
+@keyframes theFall {
+    from {
+        transform: translateY(-300px);
+    }
+    to {
+        transform: translateY(-0);
+    }
+    
 }
