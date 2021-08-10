@@ -84,12 +84,24 @@ function boardMoves(index) {
 function diagonalVictory(arr) {
 
     if (upRightDownLeft(arr) === true) {
-        alert("win for Up Right Down Left");
+        if(mapArray[arr[0]][arr[1]]===1){
+            alert("Black Wins!!!")
+            setTimeout(location.reload(), 2000)
+        }else if(mapArray[arr[0]][arr[1]]===2){
+            alert("Red Wins!!!")
+            setTimeout(location.reload(), 2000)
+        }
     }
     counter = 1;
 
     if (upLeftDownRight(arr) === true) {
-        alert("win for Up Left Down Right");
+        if(mapArray[arr[0]][arr[1]]===1){
+            alert("Black Wins!!!")
+            setTimeout(location.reload(), 2000)
+        }else if(mapArray[arr[0]][arr[1]]===2){
+            alert("Red Wins!!!")
+            setTimeout(location.reload(), 2000)
+        }
     }
     counter = 1;
 }
@@ -166,13 +178,23 @@ function crossWins(arr){
 
     
         if(horizontalWins(arr) === true){
-            
-            alert("Horizontal Wins!!!")
+            if(mapArray[arr[0]][arr[1]]===1){
+                alert("Black Wins!!!")
+                setTimeout(location.reload(), 2000)
+            }else if(mapArray[arr[0]][arr[1]]===2){
+                alert("Red Wins!!!")
+                setTimeout(location.reload(), 2000)
+            }
     }
     
         if(verticalWins(arr) === true){
-
-            alert("Vertical Wins!!!")
+            if(mapArray[arr[0]][arr[1]]===1){
+                alert("Black Wins!!!")
+                setTimeout(location.reload(), 2000)
+            }else if(mapArray[arr[0]][arr[1]]===2){
+                alert("Red Wins!!!")
+                setTimeout(location.reload(), 2000)
+            }
         }
 
 }
