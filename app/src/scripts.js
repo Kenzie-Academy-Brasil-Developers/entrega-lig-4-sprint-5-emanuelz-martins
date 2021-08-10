@@ -88,8 +88,8 @@ function upRightDownLeft(arr) {
     if (check[0] > 0) {
         while (mapArray[check[0]][check[1]] === mapArray[check[0] - 1][check[1] + 1]) {
             counter += 1;
-            check[0] += 1;
-            check[1] -= 1;
+            check[0] -= 1;
+            check[1] += 1;
             if (check[0] === 0 || check[0] === 5 || check[1] === 0 || check[1] === 6) {
                 break;
             }
