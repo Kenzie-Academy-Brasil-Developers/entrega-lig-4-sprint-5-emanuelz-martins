@@ -1,5 +1,5 @@
 const mainTable = document.querySelector('#main-container');
-const mapArray = [
+let mapArray = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -7,19 +7,25 @@ const mapArray = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
 ];
-const columns = document.querySelectorAll('.column');
-const rows = document.querySelectorAll('.row');
+const columns = document.getElementsByClassName('column');
+const rows = document.getElementsByClassName('row');
 let lastIndex = Number;
 
 let diskCount = 0;
 let counter = 1;
 let match = false;
+let coords = [];
 
 createTable();
 
 for (let i = 0; i < columns.length; i++) {
     columns[i].addEventListener("click", event => {
-        boardMoves(i);
+        let columnsArray = [...columns];
+        let currentTarget = event.currentTarget;
+        let test = columnsArray.findIndex((element) => element === currentTarget);
+        boardMoves(test);
+        diagonalVictory(coords);
+        crossWins(coords);
     });
 }
 
@@ -55,6 +61,7 @@ function boardMoves(index) {
             match = true;
             lastIndex = i;
             diskCount++;
+            coords = [i, index];
             break;
         }
         else if (numberOfSpaces === 0 && match === true) {
@@ -63,21 +70,21 @@ function boardMoves(index) {
             match = false;
             lastIndex = i;
             diskCount++;
+            coords = [i, index];
             break;
         }
     }
-    //  CHAMAR VERIFICAÇÃO DE VITÓRIA (INDEX);
 }
 
 function diagonalVictory(arr) {
 
     if (upRightDownLeft(arr) === true) {
-        console.log("win for Up Right Down Left");
+        alert("win for Up Right Down Left");
     }
     counter = 1;
 
     if (upLeftDownRight(arr) === true) {
-        console.log("win for Up Left Down Right");
+        alert("win for Up Left Down Right");
     }
     counter = 1;
 }
