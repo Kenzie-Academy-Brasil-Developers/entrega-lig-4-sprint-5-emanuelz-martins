@@ -1,3 +1,18 @@
+#main-container {
+    display: flex;
+    max-width: 80vw;
+    border: 1px solid black;
+}
+
+.column {
+    width: 15%;
+}
+
+.row {
+    height: 10vh;
+    border: 2px solid black;
+}
+
 .blackBall {
     background-color: black;
     width: 30px;
@@ -20,11 +35,12 @@
     animation-iteration-count: 1;    
 }
 
-    @keyframes theFall {
-        from {
-            transform: translateY(-300px);
-        }
-        to {
-            transform: translateY(-0);
-        }
+@keyframes theFall {
+    from {
+        transform: translateY(-300px);
     }
+    to {
+        transform: translateY(-0);
+    }
+    
+}
