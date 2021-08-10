@@ -1,16 +1,14 @@
 #main-container {
+    display: flex;
     max-width: 80vw;
-    width: 100%;
     border: 1px solid black;
 }
 
-.row {
-    display: flex;
-    height: 10vh;
-    border: 2px solid black;
+.column {
+    width: 15%;
 }
 
-.column {
-    padding: 16.7px;
+.row {
+    height: 10vh;
     border: 2px solid black;
 }
