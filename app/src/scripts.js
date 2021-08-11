@@ -1,7 +1,7 @@
 const mainTable = document.querySelector('#main-container');
 const columns = document.getElementsByClassName('column');
 const rows = document.getElementsByClassName('row');
-const arrow = document.querySelector('#arrow');
+const arrow = document.querySelector('#indicator-arrow-right');
 const mapArray = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -25,6 +25,7 @@ for (let i = 0; i < columns.length; i++) {
         let columnsArray = [...columns];
         let currentTarget = event.currentTarget;
         let index = columnsArray.findIndex((element) => element === currentTarget);
+        togglePlayerSelection(match);
         boardMoves(index);
         diagonalVictory(coords);
         crossWins(coords);
@@ -79,6 +80,16 @@ function boardMoves(index) {
             coords = [i, index];
             break;
         }
+    }
+}
+
+function togglePlayerSelection(match) {
+    if (match == false) {
+        arrow.classList.replace('left', 'right');
+    }
+
+    if (match) {
+        arrow.classList.replace('right', 'left');
     }
 }
 

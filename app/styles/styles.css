@@ -13,6 +13,10 @@
     border: 2px solid black;
 }
 
+.hidden {
+    display: none;
+}
+
 .blackBall {
     background-color: black;
     width: 30px;
@@ -35,6 +39,36 @@
     animation-iteration-count: 1;    
 }
 
+.player-banner {
+    display: flex;
+}
+
+.red-figure, .green-figure {
+    display: flex;
+    justify-content: center;
+}
+
+.red-mushroom, .green-mushroom {
+    max-width: 35%;
+}
+
+.arrow {
+    max-width: 50px;
+}
+
+.right {
+    animation-name: arrowFlipLeft;
+    animation-duration: 0.7s;
+    /* animation-direction: alternate; */
+}
+
+.left {
+    transform: rotate(180deg);
+    animation-name: arrowFlipRight;
+    animation-duration: 0.7s;
+    animation-direction: alternate;
+}
+
 @keyframes theFall {
     from {
         transform: translateY(-300px);
@@ -43,4 +77,28 @@
         transform: translateY(-0);
     }
     
+}
+
+@keyframes arrowFlipLeft {
+    from {
+        transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+    }
+    
+    to {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+@keyframes arrowFlipRight {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+    }
 }
