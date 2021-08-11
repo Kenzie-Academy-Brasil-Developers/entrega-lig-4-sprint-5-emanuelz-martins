@@ -8,7 +8,34 @@
         <title>Lig - 04</title>
     </head>
     <body>
-        <main id="main-container"></main>
+        <img src="/app/img/title.png" alt="Super Mario World Connect 4" class="titleImage">
+        <div class="startButton">
+            <img src="/app/img/startButton.png" alt="Start Button" class="startButton__button">
+        </div>
+        <main class="main-container hidden">
+            <div class="buttons hidden">
+                <div class="buttons__redWins hidden">
+                    <img src="/app/img/mario.png" alt="Mario" class="redWins__image">
+                    <div class="redWins__redDiv">
+                        <h2 class="redDiv__title">Red Wins!</h2>
+                        <button class="redDiv__button restartButton">Restart</button>
+                    </div>
+                </div>
+                <div class="buttons__greenWins hidden">
+                    <img src="/app/img/luigi.png" alt="Luigi" class="greenWins__image">
+                    <div class="greenWins__greenDiv">
+                        <h2 class="greenDiv__title">Green Wins!</h2>
+                        <button class="greenDiv__button restartButton">Restart</button>
+                    </div>
+                </div>
+                <div class="buttons__draw hidden">
+                    <img src="/app/img/goomba.png" alt="Goomba" class="drawWins__image">
+                    <div class="drawWins__drawDiv">
+                        <h2 class="drawDiv__title">Draw!</h2>
+                        <button class="drawDiv__button restartButton">Restart</button>
+                    </div>
+                </div>
+        </main>
         <script src="./src/scripts.js"></script>
     </body>
 </html>

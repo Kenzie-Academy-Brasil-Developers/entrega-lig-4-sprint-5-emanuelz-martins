@@ -1,4 +1,4 @@
-const mainTable = document.querySelector('#main-container');
+const mainTable = document.querySelector('.main-container');
 let mapArray = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -9,8 +9,16 @@ let mapArray = [
 ];
 const columns = document.getElementsByClassName('column');
 const rows = document.getElementsByClassName('row');
-let lastIndex = Number;
+const startButton = document.querySelector(".startButton");
+const titleImage = document.querySelector(".titleImage");
 
+const buttonsDiv = document.querySelector(".buttons");
+const redWin = document.querySelector(".buttons__redWins");
+const greenWin = document.querySelector(".buttons__greenWins");
+const drawWins = document.querySelector(".buttons__draw");
+let restartButton = document.querySelectorAll(".restartButton");
+
+let lastIndex = Number;
 let diskCount = 0;
 let counter = 1;
 let match = false;
@@ -18,6 +26,18 @@ let coords = [];
 let draw = 0
 
 createTable();
+
+startButton.addEventListener("click", () => {
+    mainTable.classList.remove("hidden")
+    startButton.classList.add("hidden")
+    titleImage.style.width = "50vw";
+});
+
+for (let loop=0; loop<3; loop++){
+    restartButton[loop].addEventListener("click", () => {
+        location.reload()
+    })
+}
 
 for (let i = 0; i < columns.length; i++) {
     columns[i].addEventListener("click", event => {
@@ -28,10 +48,11 @@ for (let i = 0; i < columns.length; i++) {
         diagonalVictory(coords);
         crossWins(coords);
         if(draw === 42){
-            alert("Draw!!!")
-            setTimeout(location.reload(), 2000)
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                drawWins.classList.remove("hidden")
+            }, 300)
         }
-        console.log(draw)
     });
 }
 
@@ -88,22 +109,30 @@ function diagonalVictory(arr) {
 
     if (upRightDownLeft(arr) === true) {
         if(mapArray[arr[0]][arr[1]]===1){
-            alert("Black Wins!!!")
-            setTimeout(location.reload(), 2000)
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                redWin.classList.remove("hidden")
+            }, 300)
         }else if(mapArray[arr[0]][arr[1]]===2){
-            alert("Red Wins!!!")
-            setTimeout(location.reload(), 2000)
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                greenWin.classList.remove("hidden")
+            }, 300)
         }
     }
     counter = 1;
 
     if (upLeftDownRight(arr) === true) {
         if(mapArray[arr[0]][arr[1]]===1){
-            alert("Black Wins!!!")
-            setTimeout(location.reload(), 2000)
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                redWin.classList.remove("hidden")
+            }, 300)
         }else if(mapArray[arr[0]][arr[1]]===2){
-            alert("Red Wins!!!")
-            setTimeout(location.reload(), 2000)
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                greenWin.classList.remove("hidden")
+            }, 300)
         }
     }
     counter = 1;
@@ -182,21 +211,29 @@ function crossWins(arr){
     
         if(horizontalWins(arr) === true){
             if(mapArray[arr[0]][arr[1]]===1){
-                alert("Black Wins!!!")
-                setTimeout(location.reload(), 2000)
+                setTimeout(() => {
+                    buttonsDiv.classList.remove("hidden")
+                    redWin.classList.remove("hidden")
+                }, 300)
             }else if(mapArray[arr[0]][arr[1]]===2){
-                alert("Red Wins!!!")
-                setTimeout(location.reload(), 2000)
+                setTimeout(() => {
+                    buttonsDiv.classList.remove("hidden")
+                    greenWin.classList.remove("hidden")
+                }, 300)
             }
     }
     
         if(verticalWins(arr) === true){
             if(mapArray[arr[0]][arr[1]]===1){
-                alert("Black Wins!!!")
-                setTimeout(location.reload(), 2000)
+                setTimeout(() => {
+                    buttonsDiv.classList.remove("hidden")
+                    redWin.classList.remove("hidden")
+                }, 300)
             }else if(mapArray[arr[0]][arr[1]]===2){
-                alert("Red Wins!!!")
-                setTimeout(location.reload(), 2000)
+                setTimeout(() => {
+                    buttonsDiv.classList.remove("hidden")
+                    greenWin.classList.remove("hidden")
+                }, 300)
             }
         }
 
