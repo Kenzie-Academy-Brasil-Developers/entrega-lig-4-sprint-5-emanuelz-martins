@@ -221,6 +221,16 @@
     display: none;
 }
 
+@media only screen and (min-width: 350px){
+    .blackBall{
+        height: 80%;
+    }
+
+    .redBall{
+        height: 80%;
+    }
+}
+
 @keyframes theFall {
     from {
         transform: translateY(-300px);

@@ -281,20 +281,6 @@ function crossWins(arr) {
     }
 }
 
-if (verticalWins(arr) === true) {
-    if (mapArray[arr[0]][arr[1]] === 1) {
-        setTimeout(() => {
-            buttonsDiv.classList.remove("hidden")
-            redWin.classList.remove("hidden")
-        }, 500)
-    } else if (mapArray[arr[0]][arr[1]] === 2) {
-        setTimeout(() => {
-            buttonsDiv.classList.remove("hidden")
-            greenWin.classList.remove("hidden")
-        }, 500)
-    }
-}
-
 function horizontalWins(arr) {
 
     let row = arr[0];
