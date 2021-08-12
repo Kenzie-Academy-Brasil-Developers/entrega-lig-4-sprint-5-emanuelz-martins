@@ -45,7 +45,7 @@ startButton.addEventListener("click", () => {
     mainTable.classList.remove("hidden")
     startButton.classList.add("hidden")
     banner.classList.remove('hidden');
-    titleImage.style.width = "50vw";
+    titleImage.style.width = "40vw";
     intro.pause();
     introStart.volume = 0.04;
     introStart.play();
@@ -64,8 +64,8 @@ for (let i = 0; i < columns.length; i++) {
         let columnsArray = [...columns];
         let currentTarget = event.currentTarget;
         let index = columnsArray.findIndex((element) => element === currentTarget);
-        togglePlayerSelection(match);
         boardMoves(index);
+        togglePlayerSelection(match);
         fallSound.play();
         diagonalVictory(coords);
         crossWins(coords);
@@ -145,12 +145,16 @@ function diagonalVictory(arr) {
     if (upRightDownLeft(arr) === true) {
         if (mapArray[arr[0]][arr[1]] === 1) {
             setTimeout(() => {
+                mainTable.classList.remove("blur")
+                buttonsDiv.classList.add("blur")
                 buttonsDiv.classList.remove("hidden")
                 redWin.classList.remove("hidden")
                 winnerSound.play();
             }, 500)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
             setTimeout(() => {
+                mainTable.classList.remove("blur")
+                buttonsDiv.classList.add("blur")
                 buttonsDiv.classList.remove("hidden")
                 greenWin.classList.remove("hidden")
                 winnerSound.play();
@@ -162,12 +166,16 @@ function diagonalVictory(arr) {
     if (upLeftDownRight(arr) === true) {
         if (mapArray[arr[0]][arr[1]] === 1) {
             setTimeout(() => {
+                mainTable.classList.remove("blur")
+                buttonsDiv.classList.add("blur")
                 buttonsDiv.classList.remove("hidden")
                 redWin.classList.remove("hidden")
                 winnerSound.play();
             }, 500)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
             setTimeout(() => {
+                mainTable.classList.remove("blur")
+                buttonsDiv.classList.add("blur")
                 buttonsDiv.classList.remove("hidden")
                 greenWin.classList.remove("hidden")
                 winnerSound.play();
@@ -251,12 +259,16 @@ function crossWins(arr) {
     if (horizontalWins(arr) === true) {
         if (mapArray[arr[0]][arr[1]] === 1) {
             setTimeout(() => {
+                mainTable.classList.remove("blur")
+                buttonsDiv.classList.add("blur")
                 buttonsDiv.classList.remove("hidden")
                 redWin.classList.remove("hidden")
                 winnerSound.play();
             }, 500)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
             setTimeout(() => {
+                mainTable.classList.remove("blur")
+                buttonsDiv.classList.add("blur")
                 buttonsDiv.classList.remove("hidden")
                 greenWin.classList.remove("hidden")
                 winnerSound.play();
@@ -267,12 +279,16 @@ function crossWins(arr) {
     if (verticalWins(arr) === true) {
         if (mapArray[arr[0]][arr[1]] === 1) {
             setTimeout(() => {
+                mainTable.classList.remove("blur")
+                buttonsDiv.classList.add("blur")
                 buttonsDiv.classList.remove("hidden")
                 redWin.classList.remove("hidden")
                 winnerSound.play();
             }, 500)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
             setTimeout(() => {
+                mainTable.classList.remove("blur")
+                buttonsDiv.classList.add("blur")
                 buttonsDiv.classList.remove("hidden")
                 greenWin.classList.remove("hidden")
                 winnerSound.play();

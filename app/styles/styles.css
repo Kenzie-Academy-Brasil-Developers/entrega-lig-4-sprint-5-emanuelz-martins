@@ -1,10 +1,17 @@
+@font-face {
+    font-family: "Super Mario World Font";
+    src: url(/app/fonts/Super-Mario-World.ttf);
+  }
+body{
+    background-image: url(/app/img/background-image.png);
+}
 
 .titleImage{
     margin: 0 auto;
     display: flex;
     justify-content: center;
     width: 100vw;
-    max-width: 600px;
+    max-width: 500px;
 }
 
 .startButton{
@@ -16,6 +23,9 @@
     border: 5px solid black;
     width: 50vw;
     max-width: 300px;
+}
+.startButton:hover{
+    cursor: pointer;
 }
 
 .startButton__button{
@@ -31,8 +41,8 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    width: 80vw;
-    max-width: 300px;
+    width: 90vw;
+    max-width: 400px;
     height: 30vh;
     min-height: 260px;
     border: 20px solid black;
@@ -45,14 +55,18 @@
     width: 15%;
     height: 100%;
     border-right: 1px solid black;
+    padding: 2px;
 }
 .column:last-child{
     border-right: none;
 }
+.column:hover{
+    cursor: pointer;
+}
 
 .row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     height: 17%;
 }
 
@@ -69,8 +83,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 20%;
-    width: 60%;
+    height: 25%;
+    width: 70%;
     max-width: 160px;
     background-color: red;
     border-radius: 5px;
@@ -84,23 +98,24 @@
     width: 100%;
 }
 .redWins__image{
-    width: 40%;
+    width: 50%;
 }
 .redDiv__button{
-    width: 80%;
+    width: 100%;
     padding: 2px;
 }
 .redDiv__title{
     margin: 0 auto;
     text-align: center;
+    font-family: "Super Mario World Font";
 }
 
 .buttons__greenWins{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 20%;
-    width: 60%;
+    height: 25%;
+    width: 70%;
     max-width: 160px;
     background-color: green;
     border-radius: 5px;
@@ -119,19 +134,20 @@
     height: 100%;
 }
 .greenDiv__button{
-    width: 60%;
+    width: 100%;
     padding: 2px;
 }
 .greenDiv__title{
     margin: 0 auto;
     text-align: center;
+    font-family: "Super Mario World Font";
 }
 
 .buttons__draw{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 20%;
+    height: 25%;
     width: 60%;
     background-color: gray;
     border-radius: 5px;
@@ -148,11 +164,22 @@
     width: 30%;
 }
 .drawDiv__button{
-    width: 50%;
+    width: 100%;
     padding: 3px;
 }
 .drawDiv__title{
     margin: 0 auto;
+    font-family: "Super Mario World Font";
+}
+
+.restartButton{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: "Super Mario World Font";
+}
+.restartButton:hover{
+    cursor: pointer;
 }
 
 .blackBall {
@@ -183,6 +210,10 @@
     display: flex;
     max-width: 300px;
     margin: 0 auto;
+    margin-bottom: 10px;
+    background-image: url(/app/img/brickWallButton.png);
+    background-size: cover;
+    border: 3px solid black;
 }
 
 .red-figure, .green-figure {
@@ -205,13 +236,13 @@
 
 
 .right {
+    transform: rotate(180deg);
     animation-name: arrowFlipLeft;
     animation-duration: 0.7s;
     /* animation-direction: alternate; */
 }
 
 .left {
-    transform: rotate(180deg);
     animation-name: arrowFlipRight;
     animation-duration: 0.7s;
     animation-direction: alternate;
@@ -221,13 +252,56 @@
     display: none;
 }
 
-@media only screen and (min-width: 350px){
-    .blackBall{
-        height: 80%;
+.blur{
+    background: rgba( 255, 255, 255, 0.00 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1.5px );
+}
+
+@media only screen and (min-width: 375px){
+    .main-container{
+        height: 35vh;
     }
 
-    .redBall{
-        height: 80%;
+    .blackBall, .redBall{
+        height: 85%;
+    }
+}
+
+@media only screen and (min-width: 425px){
+    .main-container{
+        height: 37vh;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .main-container{
+        max-width: 400px;
+        height: 40vh;
+        border-width: 40px;
+    }
+
+    .red-mushroom, .green-mushroom {
+        width: 75%;
+    }
+
+    .blackBall, .redBall{
+        width: 100%;
+        height: 85%;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .main-container{
+        max-width: 500px;
+        height: 50vh;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    .main-container{
+        max-width: 550px;
+        height: 55vh;
     }
 }
 
@@ -241,7 +315,7 @@
     
 }
 
-@keyframes arrowFlipLeft {
+@keyframes arrowFlipRight {
     from {
         transform: rotate(-180deg);
         -webkit-transform: rotate(-180deg);
@@ -253,7 +327,7 @@
     }
 }
 
-@keyframes arrowFlipRight {
+@keyframes arrowFlipLeft {
     from {
         transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
