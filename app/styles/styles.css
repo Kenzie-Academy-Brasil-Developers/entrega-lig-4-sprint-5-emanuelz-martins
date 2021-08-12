@@ -1,3 +1,13 @@
+.playMusic {
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+.stopMusic {
+    border: none;
+    cursor: pointer;
+    background: none;
+}
 
 .titleImage{
     margin: 0 auto;
