@@ -1,8 +1,16 @@
-const mainTable = document.querySelector('#main-container');
+const mainTable = document.querySelector('.main-container');
 const columns = document.getElementsByClassName('column');
 const rows = document.getElementsByClassName('row');
 const arrow = document.querySelector('#indicator-arrow-right');
-const mapArray = [
+const startButton = document.querySelector(".startButton");
+const titleImage = document.querySelector(".titleImage");
+const buttonsDiv = document.querySelector(".buttons");
+const redWin = document.querySelector(".buttons__redWins");
+const greenWin = document.querySelector(".buttons__greenWins");
+const drawWins = document.querySelector(".buttons__draw");
+const banner = document.querySelector('#player-banner');
+let restartButton = document.querySelectorAll(".restartButton");
+let mapArray = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -20,6 +28,19 @@ let draw = 0;
 
 createTable();
 
+startButton.addEventListener("click", () => {
+    mainTable.classList.remove("hidden")
+    startButton.classList.add("hidden")
+    banner.classList.remove('hidden');
+    titleImage.style.width = "50vw";
+});
+
+for (let loop = 0; loop < 3; loop++) {
+    restartButton[loop].addEventListener("click", () => {
+        location.reload()
+    })
+}
+
 for (let i = 0; i < columns.length; i++) {
     columns[i].addEventListener("click", event => {
         let columnsArray = [...columns];
@@ -29,9 +50,11 @@ for (let i = 0; i < columns.length; i++) {
         boardMoves(index);
         diagonalVictory(coords);
         crossWins(coords);
-        draw += 1;
         if (draw === 42) {
-            alert("Draw!!!");
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                drawWins.classList.remove("hidden")
+            }, 300)
         }
     });
 }
@@ -69,6 +92,7 @@ function boardMoves(index) {
             lastIndex = i;
             diskCount++;
             coords = [i, index];
+            draw += 1
             break;
         }
         else if (numberOfSpaces === 0 && match === true) {
@@ -78,6 +102,7 @@ function boardMoves(index) {
             lastIndex = i;
             diskCount++;
             coords = [i, index];
+            draw += 1
             break;
         }
     }
@@ -97,22 +122,30 @@ function diagonalVictory(arr) {
 
     if (upRightDownLeft(arr) === true) {
         if (mapArray[arr[0]][arr[1]] === 1) {
-            alert("Black Wins!!!")
-            setTimeout(location.reload(), 2000)
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                redWin.classList.remove("hidden")
+            }, 300)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
-            alert("Red Wins!!!")
-            setTimeout(location.reload(), 2000)
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                greenWin.classList.remove("hidden")
+            }, 300)
         }
     }
     counter = 1;
 
     if (upLeftDownRight(arr) === true) {
         if (mapArray[arr[0]][arr[1]] === 1) {
-            alert("Black Wins!!!")
-            setTimeout(location.reload(), 2000)
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                redWin.classList.remove("hidden")
+            }, 300)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
-            alert("Red Wins!!!")
-            setTimeout(location.reload(), 2000)
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                greenWin.classList.remove("hidden")
+            }, 300)
         }
     }
     counter = 1;
@@ -187,26 +220,35 @@ function upLeftDownRight(arr) {
 }
 
 function crossWins(arr) {
+
+
     if (horizontalWins(arr) === true) {
         if (mapArray[arr[0]][arr[1]] === 1) {
-            alert("Black Wins!!!");
-            setTimeout(location.reload(), 2000);
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                redWin.classList.remove("hidden")
+            }, 300)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
-            alert("Red Wins!!!");
-            setTimeout(location.reload(), 2000);
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                greenWin.classList.remove("hidden")
+            }, 300)
         }
     }
 
     if (verticalWins(arr) === true) {
         if (mapArray[arr[0]][arr[1]] === 1) {
-            alert("Black Wins!!!");
-            setTimeout(location.reload(), 2000);
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                redWin.classList.remove("hidden")
+            }, 300)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
-            alert("Red Wins!!!");
-            setTimeout(location.reload(), 2000);
+            setTimeout(() => {
+                buttonsDiv.classList.remove("hidden")
+                greenWin.classList.remove("hidden")
+            }, 300)
         }
     }
-
 }
 
 function horizontalWins(arr) {

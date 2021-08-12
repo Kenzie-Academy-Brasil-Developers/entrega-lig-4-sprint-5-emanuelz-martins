@@ -1,27 +1,136 @@
-#main-container {
+
+.titleImage{
+    margin: 0 auto;
     display: flex;
+    justify-content: center;
+    width: 100vw;
+    max-width: 800px;
+}
+
+.startButton{
+    background-image: url(/app/img/brickWallButton.png);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    border: 5px solid black;
+    width: 50vw;
+    max-width: 300px;
+}
+
+.startButton__button{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
     max-width: 80vw;
-    border: 1px solid black;
+    border: 50px solid black;
+    border-image: url(/app/img/border\ .png) 66 round;
+    border-top: none;
+    position: relative;
 }
 
 .column {
     width: 15%;
+    border-right: 10px solid black;
+}
+.column:last-child{
+    border-right: none;
 }
 
 .row {
+    display: flex;
+    align-items: center;
     height: 10vh;
-    border: 2px solid black;
 }
 
-.hidden {
-    display: none;
+.buttons{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons__redWins{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 20%;
+    width: 40%;
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px;
+}
+.redWins__redDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.redDiv__button{
+    width: 60%;
+    padding: 5px;
+}
+
+.buttons__greenWins{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 20%;
+    width: 40%;
+    background-color: green;
+    border-radius: 5px;
+    padding: 10px;
+}
+.greenWins__greenDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.greenDiv__button{
+    width: 60%;
+    padding: 5px;
+}
+
+.buttons__draw{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 20%;
+    width: 40%;
+    background-color: gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+.drawWins__drawDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.drawDiv__button{
+    width: 60%;
+    padding: 5px;
 }
 
 .blackBall {
-    background-color: black;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    margin: 0 auto;
+    background-image: url(/app/img/red\ mushroom.png);
+    width: 70px;
+    height: 70px;
     animation-name: theFall;
     animation-duration: 0.4s;
     animation-direction: alternate;
@@ -29,10 +138,10 @@
 }
 
 .redBall {
-    background-color: red;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    margin: 0 auto;
+    background-image: url(/app/img/green\ mushroom.png);
+    width: 70px;
+    height: 70px;
     animation-name: theFall;
     animation-duration: 0.4s;
     animation-direction: alternate;
@@ -67,6 +176,10 @@
     animation-name: arrowFlipRight;
     animation-duration: 0.7s;
     animation-direction: alternate;
+}
+
+.hidden {
+    display: none;
 }
 
 @keyframes theFall {
