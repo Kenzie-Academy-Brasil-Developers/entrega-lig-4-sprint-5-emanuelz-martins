@@ -1,3 +1,15 @@
+let intro = document.querySelector(".intro");
+window.addEventListener("load", event => {
+        intro.autoplay = true;
+        intro.volume = 0.02;
+        intro.play();
+});
+let introStart = document.querySelector(".introStart");
+let drawSound = document.querySelector(".drawSound");
+let winnerSound = document.querySelector(".winnerSound");
+let backgroundSound = document.querySelector(".backgroundSound");
+let fallSound = document.querySelector(".fallSound");
+
 const mainTable = document.querySelector('.main-container');
 let mapArray = [
     [0, 0, 0, 0, 0, 0, 0],
@@ -31,6 +43,11 @@ startButton.addEventListener("click", () => {
     mainTable.classList.remove("hidden")
     startButton.classList.add("hidden")
     titleImage.style.width = "50vw";
+    intro.pause();
+    introStart.volume = 0.04;
+    introStart.play();
+    backgroundSound.play();
+    backgroundSound.volume = 0.01;
 });
 
 for (let loop=0; loop<3; loop++){
@@ -44,6 +61,7 @@ for (let i = 0; i < columns.length; i++) {
         let columnsArray = [...columns];
         let currentTarget = event.currentTarget;
         let test = columnsArray.findIndex((element) => element === currentTarget);
+        fallSound.play();
         boardMoves(test);
         diagonalVictory(coords);
         crossWins(coords);
@@ -51,7 +69,10 @@ for (let i = 0; i < columns.length; i++) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 drawWins.classList.remove("hidden")
-            }, 300)
+                backgroundSound.pause();
+                drawSound.volume = 0.03;
+                drawSound.play();
+            }, 200)
         }
     });
 }
@@ -112,11 +133,13 @@ function diagonalVictory(arr) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 redWin.classList.remove("hidden")
+                winnerSound.play();
             }, 300)
         }else if(mapArray[arr[0]][arr[1]]===2){
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 greenWin.classList.remove("hidden")
+                winnerSound.play();
             }, 300)
         }
     }
@@ -127,11 +150,13 @@ function diagonalVictory(arr) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 redWin.classList.remove("hidden")
+                winnerSound.play();
             }, 300)
         }else if(mapArray[arr[0]][arr[1]]===2){
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 greenWin.classList.remove("hidden")
+                winnerSound.play();
             }, 300)
         }
     }
@@ -214,11 +239,13 @@ function crossWins(arr){
                 setTimeout(() => {
                     buttonsDiv.classList.remove("hidden")
                     redWin.classList.remove("hidden")
+                    winnerSound.play();
                 }, 300)
             }else if(mapArray[arr[0]][arr[1]]===2){
                 setTimeout(() => {
                     buttonsDiv.classList.remove("hidden")
                     greenWin.classList.remove("hidden")
+                    winnerSound.play();
                 }, 300)
             }
     }
@@ -228,11 +255,13 @@ function crossWins(arr){
                 setTimeout(() => {
                     buttonsDiv.classList.remove("hidden")
                     redWin.classList.remove("hidden")
+                    winnerSound.play();
                 }, 300)
             }else if(mapArray[arr[0]][arr[1]]===2){
                 setTimeout(() => {
                     buttonsDiv.classList.remove("hidden")
                     greenWin.classList.remove("hidden")
+                    winnerSound.play();
                 }, 300)
             }
         }
