@@ -10,6 +10,7 @@ const greenWin = document.querySelector(".buttons__greenWins");
 const drawWins = document.querySelector(".buttons__draw");
 const banner = document.querySelector('#player-banner');
 let restartButton = document.querySelectorAll(".restartButton");
+
 let mapArray = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -54,7 +55,7 @@ for (let i = 0; i < columns.length; i++) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 drawWins.classList.remove("hidden")
-            }, 300)
+            }, 500)
         }
     });
 }
@@ -125,12 +126,12 @@ function diagonalVictory(arr) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 redWin.classList.remove("hidden")
-            }, 300)
+            }, 500)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 greenWin.classList.remove("hidden")
-            }, 300)
+            }, 500)
         }
     }
     counter = 1;
@@ -140,12 +141,12 @@ function diagonalVictory(arr) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 redWin.classList.remove("hidden")
-            }, 300)
+            }, 500)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 greenWin.classList.remove("hidden")
-            }, 300)
+            }, 500)
         }
     }
     counter = 1;
@@ -227,12 +228,12 @@ function crossWins(arr) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 redWin.classList.remove("hidden")
-            }, 300)
+            }, 500)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 greenWin.classList.remove("hidden")
-            }, 300)
+            }, 500)
         }
     }
 
@@ -241,12 +242,12 @@ function crossWins(arr) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 redWin.classList.remove("hidden")
-            }, 300)
+            }, 500)
         } else if (mapArray[arr[0]][arr[1]] === 2) {
             setTimeout(() => {
                 buttonsDiv.classList.remove("hidden")
                 greenWin.classList.remove("hidden")
-            }, 300)
+            }, 500)
         }
     }
 }
