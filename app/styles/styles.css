@@ -1,9 +1,10 @@
 @font-face {
     font-family: "Super Mario World Font";
-    src: url(/app/fonts/Super-Mario-World.ttf);
-  }
+    src: url('../fonts/Super-Mario-World.ttf');
+}
+
 body{
-    background-image: url(/app/img/background-image.png);
+    background-image: url('../img/background-image.png');
 }
 
 .titleImage{
@@ -15,7 +16,7 @@ body{
 }
 
 .startButton{
-    background-image: url(/app/img/brickWallButton.png);
+    background-image: url('../img/brickWallButton.png');
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -46,7 +47,7 @@ body{
     height: 30vh;
     min-height: 260px;
     border: 20px solid black;
-    border-image: url(/app/img/border\ .png) 66 round;
+    border-image: url('../img/border\ .png') 66 round;
     border-top: none;
     position: relative;
 }
@@ -184,7 +185,7 @@ body{
 
 .blackBall {
     margin: 0 auto;
-    background-image: url(/app/img/red\ mushroom.png);
+    background-image: url('../img/red\ mushroom.png');
     background-size: cover;
     width: 95%;
     height: 80%;
@@ -196,7 +197,7 @@ body{
 
 .redBall {
     margin: 0 auto;
-    background-image: url(/app/img/green\ mushroom.png);
+    background-image: url('../img/green\ mushroom.png');
     background-size: cover;
     width: 95%;
     height: 80%;
@@ -211,7 +212,7 @@ body{
     max-width: 300px;
     margin: 0 auto;
     margin-bottom: 10px;
-    background-image: url(/app/img/brickWallButton.png);
+    background-image: url('../img/brickWallButton.png');
     background-size: cover;
     border: 3px solid black;
 }
@@ -239,7 +240,6 @@ body{
     transform: rotate(180deg);
     animation-name: arrowFlipLeft;
     animation-duration: 0.7s;
-    /* animation-direction: alternate; */
 }
 
 .left {
