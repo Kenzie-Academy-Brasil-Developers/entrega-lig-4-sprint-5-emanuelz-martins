@@ -7,6 +7,25 @@ body{
     background-image: url('../../app/img/background-image.png');
 }
 
+.playMusic {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-image: url('../img/brickWallButton.png');
+    cursor: pointer;
+    background: none;
+    position: absolute;
+}
+
+.stopMusic {
+    top: 35px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-image: url('../img/brickWallButton.png');
+    cursor: pointer;
+    background: none;
+    position: absolute;
+}
+
 .titleImage{
     margin: 0 auto;
     display: flex;
@@ -269,7 +288,7 @@ body{
 
 @media only screen and (min-width: 425px){
     .main-container{
-        height: 37vh;
+        height: 42vh;
     }
 
     .row {
@@ -285,17 +304,21 @@ body{
 @media only screen and (min-width: 768px){
     .main-container{
         max-width: 400px;
-        height: 60vh;
         border-width: 40px;
     }
 
     .row {
         height: 16.9%;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .red-mushroom, .green-mushroom {
         width: 65%;
+    }
+
+    .blackBall, .redBall{
+        height: 2.3em;
+        width: 2.3em;
     }
 }
 
@@ -310,6 +333,11 @@ body{
     .main-container{
         max-width: 550px;
         height: 55vh;
+    }
+
+    .blackBall, .redBall {
+        height: 3em;
+        width: 3em;
     }
 }
 

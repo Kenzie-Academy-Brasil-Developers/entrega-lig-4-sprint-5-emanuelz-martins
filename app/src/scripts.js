@@ -9,7 +9,7 @@ let drawSound = document.querySelector(".drawSound");
 let winnerSound = document.querySelector(".winnerSound");
 let backgroundSound = document.querySelector(".backgroundSound");
 let fallSound = document.querySelector(".fallSound");
-
+const bodyPage = document.querySelector("body");
 const mainTable = document.querySelector('.main-container');
 const columns = document.getElementsByClassName('column');
 const rows = document.getElementsByClassName('row');
@@ -40,7 +40,8 @@ let coords = [];
 let draw = 0;
 
 createTable();
-
+let btnPlay = document.querySelector(".playMusic");
+let btnStop = document.querySelector(".stopMusic");
 startButton.addEventListener("click", () => {
     mainTable.classList.remove("hidden")
     startButton.classList.add("hidden")
@@ -50,10 +51,26 @@ startButton.addEventListener("click", () => {
     introStart.volume = 0.04;
     introStart.play();
     backgroundSound.play();
-    backgroundSound.volume = 0.01;
+    backgroundSound.volume = 0.02;
+            btnPlay.classList.remove("hidden");
+            btnPlay.addEventListener("click", PlayMusic);
+            btnStop.classList.remove("hidden");
+            btnStop.addEventListener("click", StopMusic);
 });
 
-for (let loop = 0; loop < 3; loop++) {
+function StopMusic() {
+    if (backgroundSound.play) {
+       backgroundSound.pause();
+       backgroundSound.currentTime = 0;
+   }
+}
+function PlayMusic() {
+   if (backgroundSound.paused) {
+       backgroundSound.play();
+   }
+}
+
+for (let loop=0; loop<3; loop++){
     restartButton[loop].addEventListener("click", () => {
         location.reload()
     })
