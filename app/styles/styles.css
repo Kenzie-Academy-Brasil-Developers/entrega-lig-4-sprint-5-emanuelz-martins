@@ -1,0 +1,376 @@
+@font-face {
+    font-family: "Super Mario World Font";
+    src: url('../fonts/Super-Mario-World.ttf');
+}
+
+body{
+    background-image: url('../../app/img/background-image.png');
+}
+
+.playMusic {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-image: url('../img/brickWallButton.png');
+    cursor: pointer;
+    background: none;
+    position: absolute;
+}
+
+.stopMusic {
+    top: 35px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-image: url('../img/brickWallButton.png');
+    cursor: pointer;
+    background: none;
+    position: absolute;
+}
+
+.titleImage{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    max-width: 500px;
+}
+
+.startButton{
+    background-image: url('../../app/img/brickWallButton.png');
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    border: 5px solid black;
+    width: 50vw;
+    max-width: 300px;
+}
+.startButton:hover{
+    cursor: pointer;
+}
+
+.startButton__button{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 80%;
+}
+
+.main-container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    height: 30vh;
+    min-height: 260px;
+    border: 20px solid black;
+    border-image: url('../img/border.png') 66 round;
+    border-top: none;
+    position: relative;
+}
+
+.column {
+    width: 15%;
+    height: 100%;
+    border-right: 1px solid black;
+}
+.column:last-child{
+    border-right: none;
+}
+.column:hover{
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    height: 17%;
+}
+
+.buttons{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons__redWins{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 25%;
+    width: 70%;
+    max-width: 160px;
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px;
+}
+.redWins__redDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.redWins__image{
+    width: 50%;
+}
+.redDiv__button{
+    width: 100%;
+    padding: 2px;
+}
+.redDiv__title{
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Super Mario World Font";
+}
+
+.buttons__greenWins{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 25%;
+    width: 70%;
+    max-width: 160px;
+    background-color: green;
+    border-radius: 5px;
+    padding: 10px;
+}
+.greenWins__greenDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+}
+.greenWins__image{
+    width: 50%;
+    height: 100%;
+}
+.greenDiv__button{
+    width: 100%;
+    padding: 2px;
+}
+.greenDiv__title{
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Super Mario World Font";
+}
+
+.buttons__draw{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 25%;
+    width: 60%;
+    background-color: gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+.drawWins__drawDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.drawWins__image{
+    width: 30%;
+}
+.drawDiv__button{
+    width: 100%;
+    padding: 3px;
+}
+.drawDiv__title{
+    margin: 0 auto;
+    font-family: "Super Mario World Font";
+}
+
+.restartButton{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: "Super Mario World Font";
+}
+.restartButton:hover{
+    cursor: pointer;
+}
+
+.blackBall {
+    margin: 0 auto;
+    background-image: url('../img/red-mushroom.png');
+    background-size: cover;
+    width: 2.1em;
+    height: 2.1em;
+    animation-name: theFall;
+    animation-duration: 0.4s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+
+.redBall {
+    margin: 0 auto;
+    background-image: url('../img/green-mushroom.png');
+    background-size: cover;
+    width: 2.1em;
+    height: 2.1em;
+    animation-name: theFall;
+    animation-duration: 0.4s;
+    animation-direction: alternate;
+    animation-iteration-count: 1; 
+}
+
+.player-banner {
+    display: flex;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-image: url('../../app/img/brickWallButton.png');
+    background-size: cover;
+    border: 3px solid black;
+}
+
+.red-figure, .green-figure {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.red-mushroom, .green-mushroom {
+    width: 50%;
+    max-width: 80px;
+}
+
+#arrow-spot{
+    margin: 0 auto;
+}
+.arrow {
+    max-width: 50px;
+}
+
+
+.right {
+    transform: rotate(180deg);
+    animation-name: arrowFlipLeft;
+    animation-duration: 0.7s;
+}
+
+.left {
+    animation-name: arrowFlipRight;
+    animation-duration: 0.7s;
+    animation-direction: alternate;
+}
+
+.hidden {
+    display: none;
+}
+
+.blur{
+    background: rgba( 255, 255, 255, 0.00 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1.5px );
+}
+
+@media only screen and (min-width: 375px){
+    .main-container{
+        height: 35vh;
+    }
+
+    .blackBall, .redBall{
+        height: 85%;
+        width: 85%;
+    }
+}
+
+@media only screen and (min-width: 425px){
+    .main-container{
+        height: 42vh;
+    }
+
+    .row {
+        height: 16.2%;
+    }
+
+    .blackBall, .redBall{
+        height: 3rem;
+        width: 3rem;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .main-container{
+        max-width: 400px;
+        border-width: 40px;
+    }
+
+    .row {
+        height: 16.9%;
+        align-items: flex-start;
+    }
+
+    .red-mushroom, .green-mushroom {
+        width: 65%;
+    }
+
+    .blackBall, .redBall{
+        height: 2.3em;
+        width: 2.3em;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .main-container{
+        max-width: 500px;
+        height: 50vh;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    .main-container{
+        max-width: 550px;
+        height: 55vh;
+    }
+
+    .blackBall, .redBall {
+        height: 3em;
+        width: 3em;
+    }
+}
+
+@keyframes theFall {
+    from {
+        transform: translateY(-300px);
+    }
+    to {
+        transform: translateY(-0);
+    }
+    
+}
+
+@keyframes arrowFlipRight {
+    from {
+        transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+    }
+    
+    to {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+@keyframes arrowFlipLeft {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+    }
+}

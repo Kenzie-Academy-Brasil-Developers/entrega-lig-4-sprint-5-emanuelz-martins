@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/styles.css">
+        <title>Lig - 04</title>
+    </head>
+    <body>
+        <audio class="intro" src="./sounds/Overworld Theme - Super Mario- World.mp3" preload="auto"></audio>
+        <audio class="introStart" src="./sounds/pipe.mp3"></audio>
+        <audio class="backgroundSound" src="./sounds/Castle Theme - Super Mario World.mp3"></audio>
+        <audio class="drawSound" src="./sounds/Super Mario World - Death .mp3"></audio>
+        <audio class="winnerSound" src="./sounds/1-up.mp3"></audio>
+        <audio class="fallSound" src="./sounds/coin.mp3"></audio>
+        <button class="playMusic hidden"><img src="./img/playMusicBtn.png" alt="playMusic"></button>
+        <button class="stopMusic hidden"><img src="./img/stopMusicBtn.png" alt="stopMusic"></button>
+        
+        <img src="../app/img/title.png" alt="Super Mario World Connect 4" class="titleImage">
+        <div class="startButton">
+            <img src="../app/img/startButton.png" alt="Start Button" class="startButton__button">
+        </div>
+        <div id="player-banner" class="player-banner hidden">
+            <figure class="red-figure">
+                <img class="red-mushroom" src="../app/img/red-mushroom.png" alt="Red Mushroom">
+            </figure>
+            <figure id="arrow-spot">
+                <img id="indicator-arrow-right" class="arrow right" src="../assets/sprites/arrow.png" alt="Arrow">
+            </figure>
+            <figure class="green-figure">
+                <img class="green-mushroom" src="../app/img/green-mushroom.png" alt="Green Mushroom">
+            </figure>
+        </div>
+        <main class="main-container hidden blur">
+            <div class="buttons hidden">
+                <div class="buttons__redWins hidden">
+                    <img src="../app/img/mario.png" alt="Mario" class="redWins__image">
+                    <div class="redWins__redDiv">
+                        <h2 class="redDiv__title">Mario Wins!</h2>
+                        <button class="redDiv__button restartButton">Restart</button>
+                    </div>
+                </div>
+                <div class="buttons__greenWins hidden">
+                    <img src="../app/img/luigi.png" alt="Luigi" class="greenWins__image">
+                    <div class="greenWins__greenDiv">
+                        <h2 class="greenDiv__title">Luigi Wins!</h2>
+                        <button class="greenDiv__button restartButton">Restart</button>
+                    </div>
+                </div>
+                <div class="buttons__draw hidden">
+                    <img src="../app/img/goomba.png" alt="Goomba" class="drawWins__image">
+                    <div class="drawWins__drawDiv">
+                        <h2 class="drawDiv__title">Goomba Wins!</h2>
+                        <button class="drawDiv__button restartButton">Restart</button>
+                    </div>
+                </div>
+            </main>
+        <script src="./src/scripts.js"></script>
+    </body>
+</html>
+    
